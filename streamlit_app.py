@@ -37,7 +37,7 @@ Use for: product categories, pricing analysis, category performance
 
 RULES:
 - Write Snowflake SQL only
-- Always use GOLD schema: OLIST.GOLD.table_name
+- Always use GOLD schema: OLIST.STAGING_GOLD.table_name
 - Return SQL only, no explanation, no markdown backticks
 - Use LIMIT 500 for row-level queries
 - For aggregations no LIMIT needed
@@ -50,7 +50,7 @@ def get_snowflake_connection():
         password=st.secrets["snowflake"]["password"],
         warehouse=st.secrets["snowflake"]["warehouse"],
         database=st.secrets["snowflake"]["database"],
-        schema="GOLD"
+        schema="STAGING_GOLD"
     )
 
 def generate_sql(question: str, conversation_history: list) -> str:
