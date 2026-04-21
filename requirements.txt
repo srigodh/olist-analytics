@@ -1,0 +1,5 @@
+streamlit
+anthropic
+snowflake-connector-python
+pandas
+plotly
